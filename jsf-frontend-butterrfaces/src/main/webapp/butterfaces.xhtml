@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"     
+      xmlns:jsf="http://xmlns.jcp.org/jsf"         
+      xmlns:passthrough="http://xmlns.jcp.org/jsf/passthrough"     
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://butterfaces.larmic.de/components">
+
+    <f:view contracts="general" transient="false">
+        <ui:composition template="/template.xhtml">              
+            <ui:define name="content">  
+                <br/>
+                <div class="container">
+                    <h:form id="formId">
+                        <b:tags id="input"
+                                label="My tags"
+                                hideLabel="false"
+                                value="#{butterTag.tagString}"
+                                distinct="true"
+                                maxTags="50"
+                                confirmKeys=""
+                                placeholder="Here we go ..."
+
+                                readonly="false"
+                                disabled="false"
+                                required="false"
+                                autoFocus="false"
+                                rendered="true">
+                            <b:tooltip>
+                                Video tags
+                            </b:tooltip>
+                        </b:tags>
+                        <br/>
+                        <h:commandButton value="Save Tags" action="#{butterTag.saveTags()}"/>
+                    </h:form> 
+                </div>
+                <b:activateLibraries />
+            </ui:define>
+        </ui:composition>
+
+
+
+    </f:view>
+</html>
